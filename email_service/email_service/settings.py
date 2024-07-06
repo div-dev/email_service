@@ -119,9 +119,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'emailid'
-EMAIL_HOST_PASSWORD = 'appPassword'
-DEFAULT_FROM_EMAIL = 'Your Name '
+EMAIL_HOST_USER = 'divyanshchawla12@gmail.com'
+EMAIL_HOST_PASSWORD = 'tzvejxgiapbiuohf'
+DEFAULT_FROM_EMAIL = 'Your Name <divyanshchawla12@gmail.com>'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
