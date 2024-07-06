@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Initiate Email</title>
+</head>
+<body>
+    <h1>Initiate Email</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="email">Enter Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Start Sending Emails</button>
+    </form>
+
+    <h2>Email Records</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Last Sent At</th>
+                <th>Next Send Interval (minutes)</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in email_records %}
+                <tr>
+                    <td>{{ record.email }}</td>
+                    <td>{{ record.last_send_at }}</td>
+                    <td>{{ record.next_interval }}</td>
+                    <td>{{ record.is_active|yesno:"Active,Inactive" }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
