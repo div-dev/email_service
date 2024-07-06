@@ -25,7 +25,7 @@ def send_email_task(email_record_id, iteration=1):
             email_record.save()
             logger.debug(f"EmailRecord updated for {email_record.email}")
 
-            next_interval = 60 * 60
+            next_interval = 60 * 60 # new email every hour
             send_email_task.apply_async(args=[email_record_id, iteration + 1], countdown=next_interval)
             logger.debug(f"Next email scheduled for {email_record.email} in {next_interval / 60} minutes")
     except emailRecord.DoesNotExist:
