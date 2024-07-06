@@ -15,7 +15,7 @@ def send_email_task(email_record_id, iteration=1):
             send_mail(
                 'Test for Email_Service',
                 'This is a test Email',
-                'divyanshchawla12@gmail.com',
+                'email id',
                 [email_record.email],
                 fail_silently=False,
             )
